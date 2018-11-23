@@ -1,6 +1,8 @@
+docker-compose up -d
 mkdir -p ~/nginx
 mkdir -p ~/mysql
-docker cp -a init_tmp-nginx_1:/etc/nginx/nginx.conf ~/nginx/nginx.conf
-docker cp -a init_tmp-nginx_1:/etc/nginx/conf.d ~/nginx
+docker cp init_tmp-nginx_1:/etc/nginx/nginx.conf ~/nginx/nginx.conf
+docker cp init_tmp-nginx_1:/etc/nginx/conf.d ~/nginx
 docker cp init_tmp-mysql_1:/etc/mysql/my.cnf ~/mysql/my.cnf
 docker cp init_tmp-mysql_1:/etc/mysql/conf.d ~/mysql
+docker rm -rf init_tmp-mysql_1 init_tmp-nginx_1
