@@ -5,6 +5,7 @@ docker-compose up -d
 mkdir -p ~/nginx
 mkdir -p ~/nginx/html
 mkdir -p ~/mysql
+mkdir -p ~/mysql/data
 mkdir -p ~/gogs
 
 # cp tmp-container configs
