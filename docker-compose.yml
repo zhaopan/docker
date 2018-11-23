@@ -1,24 +1,19 @@
 version: "2"
 services:
-  web:
+  nginx:
     image: nginx
-    container_name: web
     restart: always
-#    build:
-#      context: .
-#      dockerfile: ./nginx/Dockerfile
     ports:
-      - "8080:80"
+      - "80:80"
     volumes:
-      - ~/docker/nginx/html:/usr/share/nginx/html
-      - ~/docker/nginx/conf/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ~/docker/nginx/conf/conf.d:/etc/nginx/conf.d
+      - ~/nginx/html:/usr/share/nginx/html
+      - ~/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ~/nginx/conf.d:/etc/nginx/conf.d
     networks:
       - core-network
 
   mysql:
     image: mysql
-    container_name: mysql
     restart: always
     volumes:
       - ~/docker/mysql:/var/lib/mysql
@@ -33,13 +28,12 @@ services:
 
   gogs:
     image: gogs/gogs
-    container_name: gogs
     restart: always
     ports:
       - "10022:22"
       - "10080:3000"
     volumes:
-      - ~/docker/gogs:/data
+      - ~/gogs:/data
     networks:
       - core-network
 
