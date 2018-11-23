@@ -1,2 +1,6 @@
-docker cp tmp-nginx:/etc/nginx/nginx.conf ~/nginx/conf/nginx.conf
-docker cp tmp-mysql:/etc/nginx/nginx.conf ~/mysql/my.ini
+mkdir -p ~/nginx
+mkdir -p ~/mysql
+docker cp -a init_tmp-nginx_1:/etc/nginx/nginx.conf ~/nginx/nginx.conf
+docker cp -a init_tmp-nginx_1:/etc/nginx/conf.d ~/nginx
+docker cp init_tmp-mysql_1:/etc/mysql/my.cnf ~/mysql/my.cnf
+docker cp init_tmp-mysql_1:/etc/mysql/conf.d ~/mysql
