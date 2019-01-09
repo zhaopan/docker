@@ -1,14 +1,14 @@
 version: "2"
 services:
-  tmp-nginx:
-    image: nginx
+  tmpnginx:
+    build: nginx
     restart: always
     ports:
-      - "8080:80"
+      - "8030:80"
     networks:
       - core-network
 
-  tmp-mysql:
+  tmpmysql:
     image: mysql
     restart: always
     ports:
