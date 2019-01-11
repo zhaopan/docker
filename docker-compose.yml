@@ -33,7 +33,9 @@ services:
     image: gogs/gogs
     container_name: gogs
     restart: always
-    depends_on: mysql
+    depends_on:
+      - mysql
+      - nginx
     networks:
       - core-network
     ports:
