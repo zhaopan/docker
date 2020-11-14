@@ -20,5 +20,5 @@ jobs:
           username: ${{secrets.DOCKER_USERNAME}}
           password: ${{secrets.DOCKER_PASSWORD}}
           repository: ${{github.repository}}
-          tags: ${{github.repository}}:$(date +%s)
+          tags: ${{github.repository}}:${{$(date +%s)}}
           push: true
