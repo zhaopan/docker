@@ -42,4 +42,4 @@ jobs:
           platforms: linux/386,linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ github.repository }}:${{ date +%s }}
+            ${{ github.repository }}:${{ echo $(date +%s) }}
