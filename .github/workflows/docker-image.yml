@@ -43,7 +43,7 @@ jobs:
           push: true
           tags: |
             zhaopan/docker:latest
-            docker.pkg.github.com/zhaopan/docker/docker:latest
+            docker.pkg.github.com/zhaopan/docker:latest
 
 
 #      - name: Push to Docker Hub
