@@ -20,6 +20,7 @@ jobs:
           username: ${{secrets.DOCKER_USERNAME}}
           password: ${{secrets.DOCKER_PASSWORD}}
           repository: ${{github.repository}}
-          tags: ${{ steps.docker_meta.outputs.tags }}
-          labels: ${{ steps.docker_meta.outputs.labels }}
           push: true
+          tags: ${{github.repository}}:0.0.1
+
+
