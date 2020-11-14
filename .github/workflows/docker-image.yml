@@ -42,8 +42,7 @@ jobs:
           platforms: linux/386,linux/amd64,linux/arm64
           push: true
           tags: |
-            docker:latest
-            zhaopan/docker:latest
+            zhaopan/docker:0.0.1
 
 ##docker.pkg.github.com/zhaopan/docker:latest
 
