@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Setting Env
         run: |
-          VERSION=$(echo $(date +%s))
+          echo $(date +%s)
 
       - name: Check out the repo
         uses: actions/checkout@v2
