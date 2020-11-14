@@ -14,14 +14,12 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-#      - name: Push to Docker Hub
-#        uses: docker/build-push-action@v2
-#        with:
-#          username: ${{secrets.DOCKER_USERNAME}}
-#          password: ${{secrets.DOCKER_PASSWORD}}
-#          repository: ${{github.repository}}
-#          tags: ${{github.repository}}:$(date +%s)
-#          tag_with_ref: true
-#          push: true
-      - name: echoxa
-        run: echo ${{ steps.docker_meta.outputs.tags }}
+      - name: Push to Docker Hub
+        uses: docker/build-push-action@v2
+        with:
+          username: ${{secrets.DOCKER_USERNAME}}
+          password: ${{secrets.DOCKER_PASSWORD}}
+          repository: ${{github.repository}}
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
+          push: true
