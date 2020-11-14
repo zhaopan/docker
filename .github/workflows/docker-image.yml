@@ -21,6 +21,6 @@ jobs:
           password: ${{secrets.DOCKER_PASSWORD}}
           repository: ${{github.repository}}
           push: true
-          tags: ${{github.repository}}:0.0.1
+          tags: "0.0.1"
 
 
