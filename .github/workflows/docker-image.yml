@@ -42,26 +42,4 @@ jobs:
           platforms: linux/386,linux/amd64,linux/arm64
           push: true
           tags: |
-            zhaopan/docker:0.0.2
-
-##docker.pkg.github.com/zhaopan/docker:latest
-
-
-#      - name: Push to Docker Hub
-#        id: docker_build_hub
-#        uses: docker/build-push-action@v2
-#        with:
-#          username: ${{ secrets.DOCKER_USERNAME }}
-#          password: ${{ secrets.DOCKER_PASSWORD }}
-#          repository: ${{ github.repository }}
-#          tag_with_ref: true
-#
-#      - name: Push to GitHub Packages
-#        id: docker_build_pkg
-#        uses: docker/build-push-action@v2
-#        with:
-#          username: ${{ github.actor }}
-#          password: ${{ secrets.GH_ADMIN }}
-#          registry: docker.pkg.github.com
-#          repository: zhopan/docker/docker
-#          tag_with_ref: true
+            ${{ github.repository }}:${{ date +%s }}
